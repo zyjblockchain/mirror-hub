@@ -1,6 +1,6 @@
 module github.com/zyjblockchain/hub-backend
 
-go 1.17
+go 1.15
 
 require (
 	github.com/everFinance/goar v1.3.4
