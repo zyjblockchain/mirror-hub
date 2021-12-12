@@ -13,7 +13,7 @@ func main() {
 	app := &cli.App{
 		Name: "mirror-hub",
 		Flags: []cli.Flag{
-			&cli.StringFlag{Name: "mysql", Value: "root@tcp(127.0.0.1:3306)/mirror_hub?charset=utf8mb4&parseTime=True&loc=Local", Usage: "mysql dsn", EnvVars: []string{"MYSQL"}},
+			&cli.StringFlag{Name: "mysql", Value: "sandy:SmPM8KibkbXJMEjj@tcp(127.0.0.1:3306)/mirror_hub?charset=utf8mb4&parseTime=True&loc=Local", Usage: "mysql dsn", EnvVars: []string{"MYSQL"}},
 			&cli.StringFlag{Name: "ar_node", Value: "https://arweave.net", EnvVars: []string{"AR_NODE"}},
 			&cli.StringFlag{Name: "sentry", Value: "", Usage: "code runtime environment", EnvVars: []string{"SENTRY"}},
 		},
