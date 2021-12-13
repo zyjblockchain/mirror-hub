@@ -1,9 +1,10 @@
 ---
-title: "Hello Mirror Hub"
+title: "Welcome to Mirror Hub"
 date: 2021-12-12T01:05:49Z
 draft: false
 ---
 
-Hello Mirror Hub    
-I'm [Sandy](https://twitter.com/SandyA911)  
-A web3 builder
+Hello everyone    
+I'm [Sandy](https://twitter.com/SandyA911) a web3 builder   
+
+Mirror Hub pulls creators' content from mirror on arweave for display   
