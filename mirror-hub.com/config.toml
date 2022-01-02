@@ -1,4 +1,4 @@
-baseURL = "http://mirhub.xyz/"
+baseURL = "https://mirhub.xyz/"
 languageCode = "en-us"
 title = "Mirror Hub"
 theme = "hyde"

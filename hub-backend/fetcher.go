@@ -192,7 +192,7 @@ draft: false
 		log.Error("os.MkdirAll(basePath,0777)", "err", err, "basePath", basePath)
 		return err
 	}
-	fileName := fmt.Sprintf("%s.md", atm.ArId)
+	fileName := fmt.Sprintf("%s.md", atm.OriginalContentDigest)
 	if err := ioutil.WriteFile(path.Join(basePath, fileName), []byte(ss), 0777); err != nil {
 		return err
 	}

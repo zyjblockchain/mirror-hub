@@ -16,6 +16,10 @@ type ArticleMark struct {
 	Status                string `gorm:"index:idx04"` // waiting, update, pending, success, failed
 }
 
+func (a ArticleMark) TableName() string {
+	return "article_mark_1"
+}
+
 type ArticleMarkSlice []*ArticleMark
 
 func (a ArticleMarkSlice) Len() int {
