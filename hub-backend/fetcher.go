@@ -178,7 +178,7 @@ func storeMirrorArt(txData []byte, atm schema.ArticleMark) error {
 title: ` + "\"" + title + "\"" + `
 date: ` + date + `
 draft: false
----` + "\n\n" + fmt.Sprintf("###### Author: [%s](https://etherscan.io/address/%s)\n\n", atm.Contributor, atm.Contributor)
+---` + "\n\n" + fmt.Sprintf("###### Author: [%s](https://mirror.xyz/%s)\n\n", atm.Contributor, atm.Contributor)
 	ss = header + ss
 
 	// add bottom
