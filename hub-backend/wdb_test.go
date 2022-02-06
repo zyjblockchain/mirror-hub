@@ -6,6 +6,6 @@ import (
 )
 
 func TestNewWdb(t *testing.T) {
-	tt := time.Unix(time.Now().Unix()-7*24*3600, 0).Format("2006-01-02")
+	tt := time.Unix(time.Now().Unix()-15*24*3600, 0).Format("2006-01-02")
 	t.Log(tt)
 }

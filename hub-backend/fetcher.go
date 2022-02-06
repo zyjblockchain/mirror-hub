@@ -21,6 +21,7 @@ type ResTxTags struct {
 	OwnerAddress string
 	Tags         []types.Tag
 	BlockHeight  int64
+	Timestamp    int64
 }
 
 func getMirrorTxTags(gqlCli *goar.Client, minBlock, maxBlock int64, after string, resTxs *[]ResTxTags) error {
@@ -55,6 +56,7 @@ func getMirrorTxTags(gqlCli *goar.Client, minBlock, maxBlock int64, after string
 									  }
 									block {
 										height
+										timestamp
 									  }
 									}
 								cursor
@@ -77,7 +79,10 @@ func getMirrorTxTags(gqlCli *goar.Client, minBlock, maxBlock int64, after string
 					Id    string
 					Owner struct{ Address string }
 					Tags  []types.Tag
-					Block struct{ Height int64 }
+					Block struct {
+						Height    int64
+						Timestamp int64
+					}
 				}
 				Cursor string
 			}
@@ -94,6 +99,7 @@ func getMirrorTxTags(gqlCli *goar.Client, minBlock, maxBlock int64, after string
 			OwnerAddress: edge.Node.Owner.Address,
 			Tags:         edge.Node.Tags,
 			BlockHeight:  edge.Node.Block.Height,
+			Timestamp:    edge.Node.Block.Timestamp,
 		})
 	}
 	// continue search
@@ -129,6 +135,7 @@ func mergeDigestTags(resTxTags []ResTxTags) schema.ArticleMarkSlice {
 			EndContentDigest:      tagMap["Content-Digest"],
 			Owner:                 res.OwnerAddress,
 			BlockHeight:           res.BlockHeight,
+			Timestamp:             res.Timestamp,
 			Status:                schema.WaitingStatus,
 		}
 		atmArr = append(atmArr, atm)

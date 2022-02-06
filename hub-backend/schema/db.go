@@ -13,6 +13,7 @@ type ArticleMark struct {
 	EndContentDigest      string
 	Owner                 string // mirror arTx sender
 	BlockHeight           int64  `gorm:"index:idx03"`
+	Timestamp             int64  `gorm:"index:idx05"`
 	Status                string `gorm:"index:idx04"` // waiting, update, pending, success, failed
 }
 
