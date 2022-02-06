@@ -194,7 +194,7 @@ draft: false
 	bottom03 := fmt.Sprintf("###### content digest: %s\n", atm.EndContentDigest)
 	ss = ss + "\n\n" + "--- \n" + bottom01 + bottom02 + bottom03 + "---"
 
-	basePath := fmt.Sprintf("../mirror-hub.com/content/post/%s/", atm.Contributor)
+	basePath := fmt.Sprintf("./post/%s/", atm.Contributor)
 	if err := os.MkdirAll(basePath, 0777); err != nil {
 		log.Error("os.MkdirAll(basePath,0777)", "err", err, "basePath", basePath)
 		return err
