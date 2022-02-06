@@ -3,6 +3,7 @@ package hub_backend
 import (
 	"github.com/zyjblockchain/hub-backend/common"
 	"gorm.io/gorm/clause"
+	"time"
 
 	"github.com/zyjblockchain/hub-backend/schema"
 	"gorm.io/driver/mysql"
@@ -62,7 +63,8 @@ func (w *Wdb) BatchInsertOrUpdateArtMark(amtArr []*schema.ArticleMark) error {
 
 func (w *Wdb) GetWaitingArtMark() ([]schema.ArticleMark, error) {
 	records := make([]schema.ArticleMark, 0, 200)
-	err := w.Db.Model(&schema.ArticleMark{}).Where("status = ?", schema.WaitingStatus).Order("block_height asc").Limit(200).Scan(&records).Error
+	fromDay := time.Unix(time.Now().Unix()-15*24*3600, 0).Format("2006-01-02")
+	err := w.Db.Model(&schema.ArticleMark{}).Where("status = ? and updated_at >= ?", schema.WaitingStatus, fromDay).Order("block_height asc").Limit(200).Scan(&records).Error
 	return records, err
 }
 
