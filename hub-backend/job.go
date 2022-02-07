@@ -24,8 +24,8 @@ func (h *Hub) syncMirrorTxs() {
 		log.Warn("endHeight can not less than syncedHeight", "syncedHeight", h.syncedHeight, "endHeight", endHeight)
 		return
 	}
-	if endHeight-h.syncedHeight > 50000 {
-		endHeight = h.syncedHeight + 50000
+	if endHeight-h.syncedHeight > 20000 {
+		endHeight = h.syncedHeight + 20000
 	}
 
 	log.Debug("start syncMirrorTxs", "fromBlock", h.syncedHeight, "toBlock", endHeight)
